@@ -3,9 +3,10 @@
 void printWelcomeMenu();
 void printOptions();
 void add();
+void subtract();
 
 
-void main() {
+int main() {
 
 	printWelcomeMenu();
 
@@ -14,24 +15,31 @@ void main() {
 	int inputNum;
 
 	printf("Enter operation number: ");
-	scanf_s("%1o", &inputNum);
+	scanf_s("%d", &inputNum);
 
-	switch (inputNum)
-	{
+	switch (inputNum){
+
 	case 1:
 		add();
+		break;
+	case 2:
+		subtract();
+		break;
+	default:
+		printf("invalid operation number\n");
 	}
-
+return 0;
 }
 
-void printWelcomeMenu() {
+
+	void printWelcomeMenu(){
 	printf(" **********************\n");
 	printf("**   Welcome to the   **\n");
 	printf("**   BCS Calculator   **\n");
 	printf(" **********************\n");
 }
 
-void printOptions() {
+void printOptions(){
 	printf("1. Add\n");
 	printf("2. Subtract\n");
 }
